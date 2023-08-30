@@ -1,0 +1,792 @@
+/*=============================
+	HTML and Body
+=============================*/
+*
+{
+	margin: 0;
+	padding: 0;
+}
+html,
+body
+{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	color: #333;
+	font-family: "Cairo", sans-serif;
+}
+body
+{
+	background: url(../img/background.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+p
+{
+	font-size: 12px;
+}
+a
+{
+	text-decoration: none;
+}
+/* UIkit Framework Modifications */
+.uk-input
+{
+	border: 1px solid #999;
+	border-radius: .25rem;
+}
+div.uk-margin
+{
+	margin-bottom: 5px;
+}
+div.uk-modal-dialog div.uk-inline
+{
+	width: 100%;
+}
+.uk-card-body
+{
+	padding-bottom: 5px;
+}
+.uk-checkbox
+{
+	border: 1px solid #999;
+}
+.uk-table th,
+.uk-table td
+{
+	color: #333;
+	text-align: center;
+	font-family: "Cairo", sans-serif;
+}
+.uk-table th
+{
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+.uk-table-hover tbody tr:hover,
+.uk-table-hover>tr:hover
+{
+	background: rgba(9, 67, 148, 0.2);
+}
+/* Personal CSS */
+.success-input
+{
+	background-color: #5CB85C;
+}
+.danger-input
+{
+	background-color: #D9534F;
+}
+/* 404 Not Found Page */
+#P404 h1
+{
+	color: #FFF;
+	font-weight: bold;
+	font-family: 'Cairo', sans-serif;
+}
+/*=============================
+		Preloader
+=============================*/
+#preloader
+{
+	overflow: hidden;
+	background-color: #FFFFFF;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+}
+#status
+{
+	background-image: url("../img/preloader.gif");
+	background-repeat: no-repeat;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -40px;
+	margin-left: -40px;
+}
+/*=============================
+	Sign in & Sign up
+=============================*/
+#signin,
+#signup{
+	border-radius: .25rem;
+	box-shadow: 2px 2px 5px #333;
+}
+#signin .uk-card-title,
+#signup .uk-card-title
+{
+	letter-spacing: 3px;
+	color: #094394;
+	font-size: 25px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+}
+#signin-show-password,
+#signup-show-password
+{
+	cursor: pointer;
+	color: #333;
+	letter-spacing: 1px;
+	font-size: 13px;
+}
+#signin-btn,
+#signup-btn
+{
+	background-color: #094394;
+	color: #FFF;
+	width: 100%;
+	height: 40px;
+	border-radius: .25rem;
+	letter-spacing: 3px;
+	font-size: 15px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+	border: 1px solid #333;
+	cursor:pointer;
+}
+#signin-btn:focus,
+#signin-btn:hover,
+#signup-btn:focus,
+#signup-btn:hover
+{
+	background-color: #062D64;
+}
+#signin .uk-card-footer p,
+#signup .uk-card-footer p
+{
+	font-size: 15px;
+	color: #333;
+}
+/* Sign in */
+#signin-forgot-password
+{
+	font-size: 14px;
+}
+/* Sign up */
+#signup .uk-card-body
+{
+	overflow-y: scroll;
+	max-height: 163px;
+}
+#signup .uk-card-body .signup-label
+{
+	color: #333;
+	font-weight: bold;
+	font-family: "Cairo", sans-serif;
+	letter-spacing: 1px;
+}
+/* Hide Sign up Form */
+#signup
+{
+	display: none;
+}
+/* Hide Errors */
+#signup-matricule-necessary,
+#signup-login-necessary,
+#signup-login-taken,
+#signup-fname-necessary,
+#signup-lname-necessary,
+#signup-password-necessary,
+#signup-email-necessary,
+#invalid-signin-login,
+#invalid-signin-password,
+#invalid-signup-empty-fields,
+#invalid-signup-not-employee,
+#invalid-signup-already-registered,
+#invalid-signup-login-taken,
+#invalid-signup-error,
+#invalid-empty-fields,
+#invalid-choosing-sport-user,
+#necessary-sport-start-period-user,
+#invalid-choosing-sport-spouse,
+#necessary-sport-start-period-spouse,
+#invalid-choosing-sport-kid1,
+#necessary-sport-start-period-kid1,
+#invalid-choosing-sport-kid2,
+#necessary-sport-start-period-kid2,
+#family-spouse-fname-necessary,
+#family-spouse-lname-necessary,
+#family-kid1-fname-necessary,
+#family-kid1-lname-necessary,
+#family-kid2-fname-necessary,
+#family-kid2-lname-necessary
+{
+	color: red; display: none;
+}
+/*=============================
+		Home Page
+=============================*/
+#user #home,
+#etap #home,
+#asetap #home
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
+	height: 80%;
+	background-color: #FFF;
+}
+#user #home-header h4,
+#etap #home-header h4,
+#asetap #home-header h4
+{
+	margin-top: -75px;
+}
+#user #home-header h3,
+#etap #home-header h3,
+#asetap #home-header h3
+{
+	margin-top: -15px;
+	font-weight: bold;
+}
+#user #home-header h4,
+#user #home-header h3,
+#etap #home-header h4,
+#etap #home-header h3,
+#asetap #home-header h4,
+#asetap #home-header h3
+{
+	font-family: 'Cairo', sans-serif;
+	letter-spacing: 1px;
+}
+#user #user-sections,
+#etap #user-sections,
+#asetap #user-sections
+{
+	margin-top: -25px;
+}
+#user #user-sections h3,
+#etap #user-sections h3,
+#asetap #user-sections h3
+{
+	letter-spacing: 3px;
+	color: #094394;
+	font-size: 20px;
+	font-family: 'Cairo', sans-serif;
+	font-weight: bold;
+}
+/* Left Menu */
+#user #left-menu-btn-open,
+#etap #left-menu-btn-open,
+#asetap #left-menu-btn-open
+{
+	margin: 20px;
+	color: #094394;
+}
+#user #left-menu-btn-close,
+#user #user-sport-history-btn-close,
+#etap #left-menu-btn-close,
+#etap #user-sport-history-btn-close,
+#asetap #left-menu-btn-close,
+#asetap #user-sport-history-btn-close
+{
+	color: #094394;
+}
+#user #left-menu .uk-offcanvas-bar,
+#etap #left-menu .uk-offcanvas-bar,
+#asetap #left-menu .uk-offcanvas-bar
+{
+	background-color: rgba(255,255,255,.9); color: #333;
+}
+#user #left-menu ul,
+#etap #left-menu ul,
+#asetap #left-menu ul
+{
+	margin-top: 20px;
+}
+#user #left-menu .uk-button,
+#etap #left-menu .uk-button,
+#asetap #left-menu .uk-button
+{
+	width: 100%;
+	margin-top: 7%;
+	background-color: #094394;
+	color: #FFF;
+	border-radius: .25rem;
+	letter-spacing: 1px;
+	font-size: 14px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+	border: 1px solid #333;
+	line-height: 30px;
+}
+#user #left-menu img,
+#etap #left-menu img,
+#asetap #left-menu img
+{
+	width: 100px;
+	height: 100px;
+	margin-top: 7%;
+}
+/* Profile Menu */
+#user #profile-menu-btn,
+#etap #profile-menu-btn,
+#asetap #profile-menu-btn
+{
+	color: #094394;
+	background-color: #CED4DA;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	border: 2px solid #094394;
+	margin: 20px;
+}
+#user #profile-menu,
+#etap #profile-menu,
+#asetap #profile-menu
+{
+	background-color: #CED4DA;
+	border: 1px solid #094394;
+	border-radius: .25rem;
+	margin-right: 15px;
+}
+#user .profile-btn,
+#user .modal-btn,
+#etap .profile-btn,
+#etap .modal-btn,
+#asetap .profile-btn,
+#asetap .modal-btn,#etap #confirm-change-type
+{
+	background-color: #094394;
+	color: #FFF;
+	width: 100%;
+	height: 30px;
+	border-radius: .25rem;
+	letter-spacing: 2px;
+	font-size: 14px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+	border: 1px solid #333;
+	margin-top: 10px;
+	cursor: pointer;
+}
+#user .profile-btn:focus,
+#user .modal-btn:focus,
+#user .profile-btn:hover,
+#user .modal-btn:hover,
+#user #left-menu .uk-button:focus,
+#user #left-menu .uk-button:hover,
+#etap .profile-btn:focus,
+#etap .modal-btn:focus,
+#etap .profile-btn:hover,
+#etap .modal-btn:hover,
+#etap #left-menu .uk-button:focus,
+#etap #left-menu .uk-button:hover,
+#asetap .profile-btn:focus,
+#asetap .modal-btn:focus,
+#asetap .profile-btn:hover,
+#asetap .modal-btn:hover,
+#asetap #left-menu .uk-button:focus,
+#asetap #left-menu .uk-button:hover,
+#etap #etap-members div.uk-inline button:focus,
+#etap #etap-members div.uk-inline button:hover,
+#asetap #etap-members div.uk-inline button:focus,
+#asetap #etap-members div.uk-inline button:hover
+{
+	background-color: #062D64;
+}
+/* Section */
+#user #user-family,
+#user #user-data,
+#user #user-inscript,
+#user #user-history,
+#etap #user-family,
+#etap #user-data,
+#etap #user-inscript,
+#etap #user-history,
+#etap #etap-members,
+#asetap #etap-members,
+#etap #app-settings,
+#asetap #app-settings,
+#asetap #user-family,
+#asetap #user-data,
+#asetap #user-inscript,
+#asetap #user-history,
+#budget
+{
+	margin-left: 50px;
+	margin-right: 50px;
+	width: calc(100%,-50px);
+	height: 18rem;
+	overflow-y: auto;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+#user table thead,
+#user table tbody th,
+#etap table thead,
+#etap table tbody th,
+#asetap table thead,
+#asetap table tbody th
+{
+	background-color: rgba(9,67,148,0.4);
+}
+#user table th,
+#user table td,
+#etap table th,
+#etap table td,
+#asetap table th,
+#asetap table td
+{
+	padding: 10px;
+}
+#user table tbody button,
+#etap table tbody button,
+#asetap table tbody button,
+#add-propose-sport
+{
+	background-color: #094394;
+	color: #FFF;
+	width: 150px;
+	height: 30px;
+	border-radius: .25rem;
+	letter-spacing: 1px;
+	font-size: 14px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+	border: 1px solid #333;
+	cursor: pointer;
+	line-height: 10px;
+}
+#user table tbody button:focus,
+#user table tbody button:hover,
+#etap table tbody button:focus,
+#etap table tbody button:hover,
+#asetap table tbody button:focus,
+#asetap table tbody button:hover,
+#etap #confirm-change-type:focus,
+#etap #confirm-change-type:hover,
+#add-propose-sport:focus,
+#add-propose-sport:hover
+{
+	background-color: #062D64;
+}
+/* Family Section */
+#user .family-label,
+#etap .family-label,
+#asetap .family-label
+{
+	color: #333;
+	font-weight: bold;
+	font-family: "Cairo", sans-serif;
+	letter-spacing: 1px;
+}
+/* Sport Tracking Section */
+#user #user-data table .uk-card,
+#etap #user-data table .uk-card,
+#asetap #user-data table .uk-card
+{
+	border: 1px solid #333;
+	border-radius: .25rem;
+	padding: 5px;
+	background-color: #CED4DA;
+	color: #333;
+	font-weight: bold;
+}
+#user #user-data table .uk-card span,
+#etap #user-data table .uk-card span,
+#asetap #user-data table .uk-card span
+{
+	color: #094394;
+}
+/* Manage Family Section */
+#user #user-sport-cancel,
+#user #spouse-sport-cancel,
+#user #kid1-sport-cancel,
+#user #kid2-sport-cancel,
+#etap #user-sport-cancel,
+#etap #spouse-sport-cancel,
+#etap #kid1-sport-cancel,
+#etap #kid2-sport-cancel,
+#asetap #user-sport-cancel,
+#asetap #spouse-sport-cancel,
+#asetap #kid1-sport-cancel,
+#asetap #kid2-sport-cancel
+{
+	padding: 50px;
+	background-color: #CED4DA;
+	border-radius: 0.25rem;
+	box-shadow: 2px 2px 5px #333;
+	display: none;
+}
+#user #user-sport-cancel h4,
+#user #spouse-sport-cancel h4,
+#user #kid1-sport-cancel h4,
+#user #kid2-sport-cancel h4,
+#etap #user-sport-cancel h4,
+#etap #spouse-sport-cancel h4,
+#etap #kid1-sport-cancel h4,
+#etap #kid2-sport-cancel h4,
+#asetap #user-sport-cancel h4,
+#asetap #spouse-sport-cancel h4,
+#asetap #kid1-sport-cancel h4,
+#asetap #kid2-sport-cancel h4
+{
+	letter-spacing: 1px;
+	font-size: 20px;
+	font-family: "Cairo", sans-serif;
+}
+#user #user-sport-cancel h4 span,
+#user #spouse-sport-cancel h4 span,
+#user #kid1-sport-cancel h4 span,
+#user #kid2-sport-cancel h4 span,
+#etap #user-sport-cancel h4 span,
+#etap #spouse-sport-cancel h4 span,
+#etap #kid1-sport-cancel h4 span,
+#etap #kid2-sport-cancel h4 span,
+#asetap #user-sport-cancel h4 span,
+#asetap #spouse-sport-cancel h4 span,
+#asetap #kid1-sport-cancel h4 span,
+#asetap #kid2-sport-cancel h4 span
+{
+	font-weight: bold;
+}
+#user #user-sport-cancel button,
+#user #spouse-sport-cancel button,
+#user #kid1-sport-cancel button,
+#user #kid2-sport-cancel button,
+#etap #user-sport-cancel button,
+#etap #spouse-sport-cancel button,
+#etap #kid1-sport-cancel button,
+#etap #kid2-sport-cancel button,
+#asetap #user-sport-cancel button,
+#asetap #spouse-sport-cancel button,
+#asetap #kid1-sport-cancel button,
+#asetap #kid2-sport-cancel button,
+#etap #etap-members div.uk-inline button
+{
+	color: #FFF;
+	width: 150px;
+	height: 30px;
+	border-radius: .25rem;
+	letter-spacing: 1px;
+	font-size: 14px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+	border: 1px solid #333;
+	cursor: pointer;
+}
+/* Add & Cancel Sport Modals */
+#user div.uk-modal-dialog h3,
+#etap div.uk-modal-dialog h3,
+#asetap div.uk-modal-dialog h3
+{
+	letter-spacing: 1px;
+	color: #094394;
+	font-size: 20px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+}
+#user div.uk-modal-dialog #sports-result option,
+#etap div.uk-modal-dialog #sports-result option,
+#asetap div.uk-modal-dialog #sports-result option
+{
+	letter-spacing: 1px;
+}
+#user div.uk-modal-dialog label,
+#etap div.uk-modal-dialog label,
+#asetap div.uk-modal-dialog label
+{
+	color: #333;
+	font-weight: bold;
+	font-family: "Cairo", sans-serif;
+	letter-spacing: 1px;
+}
+/* Member's Sport History Section */
+#user #user-sport-history .uk-offcanvas-bar,
+#user #spouse-sport-history .uk-offcanvas-bar,
+#user #kid1-sport-history .uk-offcanvas-bar,
+#user #kid2-sport-history .uk-offcanvas-bar,
+#etap #user-sport-history .uk-offcanvas-bar,
+#etap #spouse-sport-history .uk-offcanvas-bar,
+#etap #kid1-sport-history .uk-offcanvas-bar,
+#etap #kid2-sport-history .uk-offcanvas-bar,
+#asetap #user-sport-history .uk-offcanvas-bar,
+#asetap #spouse-sport-history .uk-offcanvas-bar,
+#asetap #kid1-sport-history .uk-offcanvas-bar,
+#asetap #kid2-sport-history .uk-offcanvas-bar
+{
+	background-color: #FFF; color: #333;
+}
+#user div.uk-offcanvas-bar #user-sport-history-inner,
+#user div.uk-offcanvas-bar #spouse-sport-history-inner,
+#user div.uk-offcanvas-bar #kid1-sport-history-inner,
+#user div.uk-offcanvas-bar #kid2-sport-history-inner,
+#etap div.uk-offcanvas-bar #user-sport-history-inner,
+#etap div.uk-offcanvas-bar #spouse-sport-history-inner,
+#etap div.uk-offcanvas-bar #kid1-sport-history-inner,
+#etap div.uk-offcanvas-bar #kid2-sport-history-inner,
+#asetap div.uk-offcanvas-bar #user-sport-history-inner,
+#asetap div.uk-offcanvas-bar #spouse-sport-history-inner,
+#asetap div.uk-offcanvas-bar #kid1-sport-history-inner,
+#asetap div.uk-offcanvas-bar #kid2-sport-history-inner
+{
+	margin-top: 50px;
+}
+#user div.uk-offcanvas-bar #user-sport-history-inner h3,
+#user div.uk-offcanvas-bar #spouse-sport-history-inner h3,
+#user div.uk-offcanvas-bar #kid1-sport-history-inner h3,
+#user div.uk-offcanvas-bar #kid2-sport-history-inner h3,
+#etap div.uk-offcanvas-bar #user-sport-history-inner h3,
+#etap div.uk-offcanvas-bar #spouse-sport-history-inner h3,
+#etap div.uk-offcanvas-bar #kid1-sport-history-inner h3,
+#etap div.uk-offcanvas-bar #kid2-sport-history-inner h3,
+#asetap div.uk-offcanvas-bar #user-sport-history-inner h3,
+#asetap div.uk-offcanvas-bar #spouse-sport-history-inner h3,
+#asetap div.uk-offcanvas-bar #kid1-sport-history-inner h3,
+#asetap div.uk-offcanvas-bar #kid2-sport-history-inner h3
+{
+	letter-spacing: 1px;
+	color: #094394;
+	font-size: 20px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+}
+#user div.uk-offcanvas-bar #user-sport-history-inner h3 span,
+#user div.uk-offcanvas-bar #spouse-sport-history-inner h3 span,
+#user div.uk-offcanvas-bar #kid1-sport-history-inner h3 span,
+#user div.uk-offcanvas-bar #kid2-sport-history-inner h3 span,
+#etap div.uk-offcanvas-bar #user-sport-history-inner h3 span,
+#etap div.uk-offcanvas-bar #spouse-sport-history-inner h3 span,
+#etap div.uk-offcanvas-bar #kid1-sport-history-inner h3 span,
+#etap div.uk-offcanvas-bar #kid2-sport-history-inner h3 span,
+#asetap div.uk-offcanvas-bar #user-sport-history-inner h3 span,
+#asetap div.uk-offcanvas-bar #spouse-sport-history-inner h3 span,
+#asetap div.uk-offcanvas-bar #kid1-sport-history-inner h3 span,
+#asetap div.uk-offcanvas-bar #kid2-sport-history-inner h3 span,
+#user div.uk-offcanvas-bar #user-sport-history-inner table th,
+#user div.uk-offcanvas-bar #spouse-sport-history-inner table th,
+#user div.uk-offcanvas-bar #kid1-sport-history-inner table th,
+#user div.uk-offcanvas-bar #kid2-sport-history-inner table th,
+#etap div.uk-offcanvas-bar #user-sport-history-inner table th,
+#etap div.uk-offcanvas-bar #spouse-sport-history-inner table th,
+#etap div.uk-offcanvas-bar #kid1-sport-history-inner table th,
+#etap div.uk-offcanvas-bar #kid2-sport-history-inner table th,
+#asetap div.uk-offcanvas-bar #user-sport-history-inner table th,
+#asetap div.uk-offcanvas-bar #spouse-sport-history-inner table th,
+#asetap div.uk-offcanvas-bar #kid1-sport-history-inner table th,
+#asetap div.uk-offcanvas-bar #kid2-sport-history-inner table th
+{
+	color: #333;
+}
+#user div.uk-offcanvas-bar #user-sport-history-inner tbody tr:hover,
+#user div.uk-offcanvas-bar #user-sport-history-inner>tr:hover,
+#user div.uk-offcanvas-bar #spouse-sport-history-inner tbody tr:hover,
+#user div.uk-offcanvas-bar #spouse-sport-history-inner>tr:hover,
+#user div.uk-offcanvas-bar #kid1-sport-history-inner tbody tr:hover,
+#user div.uk-offcanvas-bar #kid1-sport-history-inner>tr:hover,
+#user div.uk-offcanvas-bar #kid2-sport-history-inner tbody tr:hover,
+#user div.uk-offcanvas-bar #kid2-sport-history-inner>tr:hover,
+#etap div.uk-offcanvas-bar #user-sport-history-inner tbody tr:hover,
+#etap div.uk-offcanvas-bar #user-sport-history-inner>tr:hover,
+#etap div.uk-offcanvas-bar #spouse-sport-history-inner tbody tr:hover,
+#etap div.uk-offcanvas-bar #spouse-sport-history-inner>tr:hover,
+#etap div.uk-offcanvas-bar #kid1-sport-history-inner tbody tr:hover,
+#etap div.uk-offcanvas-bar #kid1-sport-history-inner>tr:hover,
+#etap div.uk-offcanvas-bar #kid2-sport-history-inner tbody tr:hover,
+#etap div.uk-offcanvas-bar #kid2-sport-history-inner>tr:hover,
+#asetap div.uk-offcanvas-bar #user-sport-history-inner tbody tr:hover,
+#asetap div.uk-offcanvas-bar #user-sport-history-inner>tr:hover,
+#asetap div.uk-offcanvas-bar #spouse-sport-history-inner tbody tr:hover,
+#asetap div.uk-offcanvas-bar #spouse-sport-history-inner>tr:hover,
+#asetap div.uk-offcanvas-bar #kid1-sport-history-inner tbody tr:hover,
+#asetap div.uk-offcanvas-bar #kid1-sport-history-inner>tr:hover,
+#asetap div.uk-offcanvas-bar #kid2-sport-history-inner tbody tr:hover,
+#asetap div.uk-offcanvas-bar #kid2-sport-history-inner>tr:hover
+{
+	background: rgba(9, 67, 148, 0.2);
+}
+/* Display All Members Section */
+#etap #etap-members div.uk-inline span,
+#asetap #etap-members div.uk-inline span
+{
+	letter-spacing: 1px;
+	font-size: 15px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+#etap #etap-members #member-search-btn,
+#asetap #etap-members #member-search-btn,
+#etap #app-settings #member-search-paiement-btn
+{
+	background-color: #094394;
+	color: #FFF;
+	width: 150px;
+	height: 30px;
+	border-radius: .25rem;
+	letter-spacing: 1px;
+	font-size: 14px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+	border: 1px solid #333;
+	cursor: pointer;
+}
+#etap #etap-members #member-search-btn:focus,
+#etap #etap-members #member-search-btn:hover,
+#asetap #etap-members #member-search-btn:focus,
+#asetap #etap-members #member-search-btn:hover,
+#etap #app-settings #member-search-paiement-btn:focus,
+#etap #app-settings #member-search-paiement-btn:hover
+{
+	background-color: #062D64;
+}
+#etap #etap-members table tbody button.change-type-btn
+{
+	background-color: #333;
+	padding: 10px;
+	border: 1px solid #FFF;
+}
+/*=============================
+	ETAP Home Page
+=============================*/
+#etap #etap-change-type h2
+{
+	letter-spacing: 1px;
+	color: #094394;
+	font-size: 20px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+}
+#etap #etap-change-type span
+{
+	color: #333;
+}
+/*=============================
+	ASETAP Home Page
+=============================*/
+#asetap #app-settings button
+{
+	background-color: #094394;
+	color: #FFF;
+	width: 150px;
+	height: 30px;
+	border-radius: .25rem;
+	letter-spacing: 1px;
+	font-size: 14px;
+	font-family: "Cairo", sans-serif;
+	font-weight: bold;
+	border: 1px solid #333;
+	cursor: pointer;
+	margin-top: 10px;
+}
+#asetap #app-settings button:focus,
+#asetap #app-settings button:hover
+{
+	background-color: #062D64;
+}
+#asetap #admin-sport-add
+{
+	display: none;
+}

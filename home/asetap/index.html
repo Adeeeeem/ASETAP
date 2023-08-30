@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<!-- Title -->
+		<title>ASETAP</title>
+		<!-- The Author of this page -->
+		<meta name="author" content="Mohamed Adem Ben Moussa">
+		<!-- Specify the character encoding of your content -->
+		<meta charset="UTF-8">
+		<!-- Tell Internet Explorer to use the latest Rendering Engine -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- Setting the viewport to make your website look good on all devices -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Basic SEO -->
+		<meta name="description" content="Application d'Association Sportive d'Entreprise Tunisienne d'Activité Pétrolière">
+		<meta name="keywords" content="ASETAP, ETAP, Association Sportive d'Entreprise Tunisienne d'Activité Pétrolière, Association Sportive, Entreprise Tunisienne, Activité Pétrolière, Association, Sportive, Entreprise, Tunisienne, Activité, Pétrolière">
+		<!-- Robot.txt file to exclude Web Robots for specific files -->
+		<meta name="robots" content="noindex, nofollow">
+		<!-- Icon -->
+		<link rel="shortcut icon" type="image/png" href="../../img/icon.png">
+		<!-- Google Fonts -->
+		<link rel="stylesheet" href="../../fonts/Cairo/Cairo.css">
+		<!-- UIkit CSS 3.1.5 -->
+		<link rel="stylesheet" type="text/css" href="../../css/uikit/uikit.min.css">
+		<!-- Toastr CSS 2.1.3 -->
+		<link rel="stylesheet" type="text/css" href="../../css/toastr/toastr.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	</head>
+	<body id="asetap">
+
+		<!-- Preloader -->
+		<div id="preloader">
+			<div id="status">
+				&nbsp;
+			</div>
+		</div>
+		<!-- End Preloader -->
+
+		<!-- Home Page -->
+		<div id="home">
+			<!-- Home Header -->
+			<div id="home-header" class="uk-text-center">
+				<div uk-grid>
+					<div class="uk-width-1-2 uk-text-left">
+						<button id="left-menu-btn-open" uk-icon="icon: menu; ratio: 2" type="button" uk-toggle="target: #left-menu"></button>
+					</div>
+					<div class="uk-width-1-2 uk-text-right">
+						<div class="uk-inline">
+							<button uk-icon="icon: user; ratio: 2" type="button" id="profile-menu-btn"></button>
+							<div id="profile-menu" uk-dropdown="mode: click" class="text-left">
+								<button class="profile-btn">Paramétres</button>
+								<button class="profile-btn">Générale</button>
+								<button class="profile-btn logout-btn">Déconnexion</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h4>Bienvenue<br><h3 id="header-name"></h3></h4>
+			</div>
+			<!-- Home Body -->
+			<div id="home-body" class="uk-text-center uk-margin-medium-top">
+				<!-- User Sections -->
+				<ul id="user-sections" class="uk-switcher uk-margin">
+					<!-- User's Family -->
+					<li>
+						<h3>Inscrire Famille</h3>
+						<div id="user-family">
+							<table class="uk-table uk-table-divider uk-table-hover">
+								<thead>
+									<tr>
+										<th>Utilisateur</th>
+										<th>Famille "<span class="family-last-name"></span>"</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- DATA will be dispayed here from JavaScript -->
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<!-- Sport Tracking -->
+					<li>
+						<h3>Suivi Sport</h3>
+						<div id="user-data">
+							<table class="uk-table uk-table-divider uk-table-hover">
+								<thead>
+									<tr>
+										<th>Utilisateur</th>
+										<th>Famille "<span class="family-last-name"></span>"</th>
+										<th>Sport</th>
+										<th>Adresse</th>
+										<th>Période</th>
+										<th>De</th>
+										<th>à</th>
+										<th>Reste</th>
+										<th>Paiement</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- DATA will be dispayed here from JavaScript -->
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<!-- Manage Family -->
+					<li>
+						<h3>Gérer Famille</h3>
+						<div id="user-inscript">
+							<table class="uk-table uk-table-divider uk-table-hover">
+								<thead>
+									<tr>
+										<th>Utilisateur</th>
+										<th>Famille "<span class="family-last-name"></span>"</th>
+										<th>Ajouter Sport</th>
+										<th>Annuler l'inscription</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- DATA will be dispayed here from JavaScript -->
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<!-- User's History -->
+					<li>
+						<h3>Historique</h3>
+						<div id="user-history">
+							<table class="uk-table uk-table-divider uk-table-hover">
+								<thead>
+									<tr>
+										<th>Utilisateur</th>
+										<th>Famille "<span class="family-last-name"></span>"</th>
+										<th>Historique</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- DATA will be dispayed here from JavaScript -->
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<!-- Display All Members -->
+					<li>
+						<h3>Utilisateurs</h3>
+						<div id="etap-members">
+							<!-- Search Input -->
+							<div class="uk-inline">
+								<div class="uk-inline">
+									<span class="uk-form-icon" uk-icon="icon: search"></span>
+									<input id="member-search" class="uk-input" type="search" placeholder="Chercher des Membres...">
+								</div>
+								<span> Par </span>
+								<select id="type" class="uk-select uk-width-small">
+									<option value="all" selected>Tous</option>
+									<option value="matricule">Matricule</option>
+									<option value="name">Nom Employé</option>
+									<option value="user">Type Employé</option>
+									<option value="etap">Type Admin ETAP</option>
+									<option value="asetap">Type Admin ASETAP</option>
+								</select>
+								<button id="member-search-btn">Chercher</button>
+							</div>
+							<table class="uk-table uk-table-divider uk-table-hover">
+								<thead>
+									<tr>
+										<th>Matricule</th>
+										<th>Adhérent</th>
+										<th>Conjoint</th>
+										<th>Enfant 1</th>
+										<th>Enfant 2</th>
+										<th>Type</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- DATA will be dispayed here from JavaScript -->
+								</tbody>
+							</table>
+						</div>
+					</li>
+					<!-- Sport Settings -->
+					<li>
+						<h3>Administration Sport</h3>
+						<div id="app-settings">
+							<table class="uk-table uk-table-divider uk-table-hover">
+								<thead>
+									<tr>
+										<th>Ajouter Sport</th>
+										<th>Editer Sport</th>
+										<th>Supprimer Sport</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><button id="admin-sport-add-btn">Ajouter</button></td>
+										<td><button id="admin-sport-edit-btn">Editer</button></td>
+										<td><button id="admin-sport-delete-btn">Supprimer</button></td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- Add Sport -->
+							<div id="admin-sport-add">
+								<div class="uk-text-center"><h3>Ajouter Sport</h3></div>
+								<div uk-grid>
+									<!-- Sport Name -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label for="admin-add-sport-name"><b>Sport</b></label></div>
+											<input id="admin-add-sport-name" class="uk-input" type="text">
+										</div>
+									</div>
+
+									<!-- Sport Address -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label for="admin-add-sport-address"><b>Adresse</b></label></div>
+											<input id="admin-add-sport-address" class="uk-input" type="text">
+										</div>
+									</div>
+								</div>
+
+								<!-- Sport Available Days -->
+								<div class="uk-margin">
+									<div class="uk-margin"><label><b>Disponible le</b></label></div>
+									<div class="uk-margin">
+										<input id="day-1" class="uk-checkbox" type="checkbox" name="add-available" value="1"><label for="day-1"> Dimanche</label>&nbsp;&nbsp;
+										<input id="day-2" class="uk-checkbox" type="checkbox" name="add-available" value="2"><label for="day-2"> Lundi</label>&nbsp;&nbsp;
+										<input id="day-3" class="uk-checkbox" type="checkbox" name="add-available" value="3"><label for="day-3"> Mardi</label>&nbsp;&nbsp;
+										<input id="day-4" class="uk-checkbox" type="checkbox" name="add-available" value="4"><label for="day-4"> Mercredi</label>&nbsp;&nbsp;
+										<input id="day-5" class="uk-checkbox" type="checkbox" name="add-available" value="5"><label for="day-5"> Jeudi</label>&nbsp;&nbsp;
+										<input id="day-6" class="uk-checkbox" type="checkbox" name="add-available" value="6"><label for="day-6"> Venredi</label>&nbsp;&nbsp;
+										<input id="day-7" class="uk-checkbox" type="checkbox" name="add-available" value="7"><label for="day-7"> Samedi</label>
+									</div>
+								</div>
+
+								<div uk-grid>
+									<!-- Sport Start Time -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label for="admin-add-sport-start"><b>De (HH:MM)</label></b></div>
+											<input id="admin-add-sport-start" class="uk-input" type="text">
+										</div>
+									</div>
+									<!-- Sport End Time -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label for="admin-add-sport-end"><b>à (HH:MM)</label></b></div>
+											<input id="admin-add-sport-end" class="uk-input" type="text">
+										</div>
+									</div>
+								</div>
+
+								<div class="uk-margin">
+											<div class="uk-margin"><label><b>Pour</b></label></div>
+											<div uk-grid>
+												<div class="uk-width-1-4"><input id="tag-m" class="uk-radio" type="radio" name="add-tag" value="M" checked> <label for="tag-m">Hommes</label></div>
+												<div class="uk-width-1-4"><input id="tag-f" class="uk-radio" type="radio" name="add-tag" value="F"> <label for="tag-f">Femmes</label></div>
+												<div class="uk-width-1-4"><input id="tag-km" class="uk-radio" type="radio" name="add-tag" value="KM"> <label for="tag-km">Garçons</label></div>
+												<div class="uk-width-1-4"><input id="tag-kf" class="uk-radio" type="radio" name="add-tag" value="KF"> <label for="tag-kf">Filles</label></div>
+											</div>
+										</div>
+
+								<div uk-grid>
+									<!-- Sport Convinced -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label><b>Conventionné</b></label></div>
+											<div uk-grid>
+												<div class="uk-width-1-2"><input id="con-yes" class="uk-radio" type="radio" name="add-convinced" value="1"> <label for="con-yes">Oui</label></div>
+												<div class="uk-width-1-2"><input id="con-no" class="uk-radio" type="radio" name="add-convinced" value="0" checked> <label for="con-no">Non</label></div>
+											</div>
+										</div>
+									</div>
+									<!-- Sport Price -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label><b>Prix par Mois en DT</b></label></div>
+											<input id="admin-add-sport-price" class="uk-input" type="number">
+										</div>
+									</div>
+								</div>
+								<!-- Confirm Button -->
+								<button id="confirm-admin-add-sport-btn">Ajouter</button>
+							</div>
+							<!-- Edit Sport -->
+							<div id="admin-sport-edit">
+								<div class="uk-text-center"><h3>Editer Sport</h3></div>
+								<div uk-grid>
+									<!-- Listing Sports -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label for="admin-edit-sport-name"><b>Choisir Sport</b></label></div>
+											<select class="uk-select" id="admin-edit-sport-name"></select>
+										</div>
+									</div>
+
+									<!-- Sport Address -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label for="admin-edit-sport-address"><b>Adresse</b></label></div>
+											<input id="admin-edit-sport-address" class="uk-input" type="text">
+										</div>
+									</div>
+								</div>
+
+								<!-- Sport Available Days -->
+								<div class="uk-margin">
+									<div class="uk-margin"><label><b>Disponible le</b></label></div>
+									<div class="uk-margin">
+										<input id="daye-1" class="uk-checkbox" type="checkbox" name="edit-available" value="1"><label for="daye-1"> Dimanche</label>&nbsp;&nbsp;
+										<input id="daye-2" class="uk-checkbox" type="checkbox" name="edit-available" value="2"><label for="daye-2"> Lundi</label>&nbsp;&nbsp;
+										<input id="daye-3" class="uk-checkbox" type="checkbox" name="edit-available" value="3"><label for="daye-3"> Mardi</label>&nbsp;&nbsp;
+										<input id="daye-4" class="uk-checkbox" type="checkbox" name="edit-available" value="4"><label for="daye-4"> Mercredi</label>&nbsp;&nbsp;
+										<input id="daye-5" class="uk-checkbox" type="checkbox" name="edit-available" value="5"><label for="daye-5"> Jeudi</label>&nbsp;&nbsp;
+										<input id="daye-6" class="uk-checkbox" type="checkbox" name="edit-available" value="6"><label for="daye-6"> Venredi</label>&nbsp;&nbsp;
+										<input id="daye-7" class="uk-checkbox" type="checkbox" name="edit-available" value="7"><label for="daye-7"> Samedi</label>
+									</div>
+								</div>
+
+								<div uk-grid>
+									<!-- Sport Start Time -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label for="admin-edit-sport-start"><b>De (HH:MM)</label></b></div>
+											<input id="admin-edit-sport-start" class="uk-input" type="text">
+										</div>
+									</div>
+									<!-- Sport End Time -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label for="admin-edit-sport-end"><b>à (HH:MM)</label></b></div>
+											<input id="admin-edit-sport-end" class="uk-input" type="text">
+										</div>
+									</div>
+								</div>
+
+								<div class="uk-margin">
+											<div class="uk-margin"><label><b>Pour</b></label></div>
+											<div uk-grid>
+												<div class="uk-width-1-4"><input id="tag-m" class="uk-radio" type="radio" name="edit-tag" value="M" checked> <label for="tag-m">Hommes</label></div>
+												<div class="uk-width-1-4"><input id="tag-f" class="uk-radio" type="radio" name="edit-tag" value="F"> <label for="tag-f">Femmes</label></div>
+												<div class="uk-width-1-4"><input id="tag-km" class="uk-radio" type="radio" name="edit-tag" value="KM"> <label for="tag-km">Garçons</label></div>
+												<div class="uk-width-1-4"><input id="tag-kf" class="uk-radio" type="radio" name="edit-tag" value="KF"> <label for="tag-kf">Filles</label></div>
+											</div>
+										</div>
+
+								<div uk-grid>
+									<!-- Sport Convinced -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label><b>Conventionné</b></label></div>
+											<div uk-grid>
+												<div class="uk-width-1-2"><input id="con-yes" class="uk-radio" type="radio" name="edit-convinced" value="1"> <label for="con-yes">Oui</label></div>
+												<div class="uk-width-1-2"><input id="con-no" class="uk-radio" type="radio" name="edit-convinced" value="0" checked> <label for="con-no">Non</label></div>
+											</div>
+										</div>
+									</div>
+									<!-- Sport Price -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label><b>Prix par Mois en DT</b></label></div>
+											<input id="admin-edit-sport-price" class="uk-input" type="number">
+										</div>
+									</div>
+								</div>
+								<!-- Confirm Button -->
+								<button id="confirm-admin-edit-sport-btn">Editer</button>
+							</div>
+							<!-- Delete Sport -->
+							<div id="admin-sport-delete">
+								<div class="uk-text-center"><h3>Supprimer Sport</h3></div>
+								<div uk-grid>
+									<!-- Listing Sports -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label for="admin-delete-sport-name"><b>Choisir Sport</b></label></div>
+											<select class="uk-select" id="admin-delete-sport-name"></select>
+										</div>
+									</div>
+
+									<!-- Sport Address -->
+									<div class="uk-width-1-2">
+										<div class="uk-margin">
+											<div class="uk-margin"><label for="admin-delete-sport-address"><b>Adresse</b></label></div>
+											<input id="admin-delete-sport-address" class="uk-input uk-disabled" type="text" readonly="">
+										</div>
+									</div>
+								</div>
+								<!-- Confirm Button -->
+								<button id="confirm-admin-delete-sport-btn">Supprimer</button>
+							</div>
+						</div>
+					</li>
+					<!-- Budget -->
+					<li>
+						<h3>Proposition Budget</h3>
+						<div id="budget">
+							<div class="uk-text-left">
+								<div class="uk-inline uk-width-large">
+									<select id="sports-result" class="uk-select"></select>&nbsp;&nbsp;
+									<input class="uk-input uk-width-small" type="number" id="year-sport">&nbsp;&nbsp;
+									<button id="add-propose-sport">Ajouter</button>
+								</div>
+							</div>
+							<table class="uk-table uk-table-divider uk-table-hover">
+								<thead>
+									<tr>
+										<th>Sport</th>
+										<th style="background-color: #BD362F;">ASETAP Proposition</th>
+										<th style="background-color: #F89406;">ETAP Proposition</th>
+										<th>Année</th>
+										<th>Accepter</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- DATA will be dispayed here from JavaScript -->
+								</tbody>
+							</table>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Left Menu -->
+		<div id="left-menu" uk-offcanvas>
+			<div class="uk-offcanvas-bar">
+				<button id="left-menu-btn-close" class="uk-offcanvas-close" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<!-- Left Menu Links -->
+				<ul class="uk-nav uk-nav-default" uk-switcher="connect: #user-sections; animation: uk-animation-fade;">
+					<li><button class="uk-button uk-width-3-4 left-menu-btn">Inscrire Famille</button></li>
+					<li><button class="uk-button uk-width-3-4 left-menu-btn">Suivi Sport</button></li>
+					<li><button class="uk-button uk-width-3-4 left-menu-btn">Gérer Famille</button></li>
+					<li><button class="uk-button uk-width-3-4 left-menu-btn">Historique</button></li>
+					<li><button class="uk-button uk-width-3-4 left-menu-btn">Utilisateurs</button></li>
+					<li><button class="uk-button uk-width-3-4 left-menu-btn">Administration Sport</button></li>
+					<li><button class="uk-button uk-width-3-4 left-menu-btn">Proposition Budget</button></li>
+				</ul>
+				<div class="uk-text-center"><img src="../../img/logo.png"></div>
+				<button class="uk-button uk-width-1-1 left-menu-btn logout-btn">Déconnexion</button>
+			</div>
+		</div>
+
+		<!-- Spouse Family Add Modal -->
+		<div id="family-spouse-add" class="uk-flex-top" uk-modal>
+			<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+				<button class="uk-modal-close-default" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<div class="uk-text-center"><h3>Ajouter Conjoint à Famille "<span class="family-last-name"></span>"</h3></div>
+				<!-- Spouse First Name -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label for="family-spouse-fname" class="family-label">Votre Prénom</label></div>
+						<div class="uk-inline">
+						<span class="uk-form-icon" uk-icon="icon: happy"></span>
+						<input id="family-spouse-fname" class="uk-input" type="text" placeholder="Votre Prénom">
+					</div>
+				</div>
+				<!-- Necessary First Name Error -->
+				<div id="family-spouse-fname-necessary"><small>Ce champ est obligatoire</small></div>
+				<!-- Spouse Last Name -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label for="family-spouse-lname" class="family-label">Votre Nom</label></div>
+						<div class="uk-inline">
+						<span class="uk-form-icon" uk-icon="icon: happy"></span>
+						<input id="family-spouse-lname" class="uk-input" type="text" placeholder="Votre Nom">
+					</div>
+				</div>
+				<!-- Necessary Last Name Error -->
+				<div id="family-spouse-lname-necessary"><small>Ce champ est obligatoire</small></div>
+				<!-- Spouse Gender -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label class="family-label">Sexe</label></div>
+					<div uk-grid>
+						<div class="uk-width-1-2"><label><input class="uk-radio" type="radio" name="spouse-gender" value="M" checked> Homme</label></div>
+						<div class="uk-width-1-2"><label><input class="uk-radio" type="radio" name="spouse-gender" value="F"> Femme</label></div>
+					</div>
+				</div>
+				<!-- Confirm Button -->
+				<button id="confirm-spouse-family-add-btn" class="modal-btn">Confirmer</button>
+			</div>
+		</div>
+
+		<!-- Kid 1 Family Add Modal -->
+		<div id="family-kid1-add" class="uk-flex-top" uk-modal>
+			<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+				<button class="uk-modal-close-default" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<div class="uk-text-center"><h3>Ajouter Enfant 1 à Famille "<span class="family-last-name"></span>"</h3></div>
+				<!-- Spouse First Name -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label for="family-kid1-fname" class="family-label">Votre Prénom</label></div>
+						<div class="uk-inline">
+						<span class="uk-form-icon" uk-icon="icon: happy"></span>
+						<input id="family-kid1-fname" class="uk-input" type="text" placeholder="Votre Prénom">
+					</div>
+				</div>
+				<!-- Necessary First Name Error -->
+				<div id="family-kid1-fname-necessary"><small>Ce champ est obligatoire</small></div>
+				<!-- Spouse Last Name -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label for="family-kid1-lname" class="family-label">Votre Nom</label></div>
+						<div class="uk-inline">
+						<span class="uk-form-icon" uk-icon="icon: happy"></span>
+						<input id="family-kid1-lname" class="uk-input" type="text" placeholder="Votre Nom">
+					</div>
+				</div>
+				<!-- Necessary Last Name Error -->
+				<div id="family-kid1-lname-necessary"><small>Ce champ est obligatoire</small></div>
+				<!-- Spouse Gender -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label class="family-label">Sexe</label></div>
+					<div uk-grid>
+						<div class="uk-width-1-2"><label><input class="uk-radio" type="radio" name="kid1-gender" value="KM" checked> Homme</label></div>
+						<div class="uk-width-1-2"><label><input class="uk-radio" type="radio" name="kid1-gender" value="KF"> Femme</label></div>
+					</div>
+				</div>
+				<!-- Confirm Button -->
+				<button id="confirm-kid1-family-add-btn" class="modal-btn">Confirmer</button>
+			</div>
+		</div>
+
+		<!-- Kid 2 Family Add Modal -->
+		<div id="family-kid2-add" class="uk-flex-top" uk-modal>
+			<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+				<button class="uk-modal-close-default" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<div class="uk-text-center"><h3>Ajouter Enfant 2 à Famille "<span class="family-last-name"></span>"</h3></div>
+				<!-- Spouse First Name -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label for="family-kid2-fname" class="family-label">Votre Prénom</label></div>
+						<div class="uk-inline">
+						<span class="uk-form-icon" uk-icon="icon: happy"></span>
+						<input id="family-kid2-fname" class="uk-input" type="text" placeholder="Votre Prénom">
+					</div>
+				</div>
+				<!-- Necessary First Name Error -->
+				<div id="family-kid2-fname-necessary"><small>Ce champ est obligatoire</small></div>
+				<!-- Spouse Last Name -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label for="family-kid2-lname" class="family-label">Votre Nom</label></div>
+						<div class="uk-inline">
+						<span class="uk-form-icon" uk-icon="icon: happy"></span>
+						<input id="family-kid2-lname" class="uk-input" type="text" placeholder="Votre Nom">
+					</div>
+				</div>
+				<!-- Necessary Last Name Error -->
+				<div id="family-kid2-lname-necessary"><small>Ce champ est obligatoire</small></div>
+				<!-- Spouse Gender -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label class="family-label">Sexe</label></div>
+					<div uk-grid>
+						<div class="uk-width-1-2"><label><input class="uk-radio" type="radio" name="kid2-gender" value="KM" checked> Homme</label></div>
+						<div class="uk-width-1-2"><label><input class="uk-radio" type="radio" name="kid2-gender" value="KF"> Femme</label></div>
+					</div>
+				</div>
+				<!-- Confirm Button -->
+				<button id="confirm-kid2-family-add-btn" class="modal-btn">Confirmer</button>
+			</div>
+		</div>
+
+		<!-- User Sport Add Modal -->
+		<div id="user-sport-add" class="uk-flex-top" uk-modal>
+			<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+				<button class="uk-modal-close-default" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<div class="uk-text-center"><h3>Ajouter Sport Pour Adhérent</h3></div>
+				<!-- Searching Sport -->
+				<div class="uk-margin">
+					<div class="uk-inline">
+						<span class="uk-form-icon" uk-icon="icon: search"></span>
+						<input id="user-search-sports" list="user-sports-result" class="uk-input" type="search" placeholder="Chercher des Sports...">
+					</div>
+					<!-- Invalid Sport Value -->
+					<div id="invalid-choosing-sport-user" class="uk-margin-small-top"><small>Veuillez vous choisir une sport</small></div>
+				</div>
+				<!-- Listing Sports -->
+				<div class="uk-margin">
+					<datalist id="user-sports-result"></datalist>
+				</div>
+				<!-- Sport Details -->
+				<div uk-grid>
+					<!-- Sport Name -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Sport</label></div>
+							<input id="user-sport-name" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport Available Days -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Disponible</label></div>
+							<input id="user-sport-available" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<!-- Sport Address -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label>Adresse</label></div>
+					<input id="user-sport-address" class="uk-input uk-disabled" type="text" readonly>
+				</div>
+				<div uk-grid>
+					<!-- Sport Start Time -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>De</label></div>
+							<input id="user-sport-start" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport End Time -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>à</label></div>
+							<input id="user-sport-end" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<div uk-grid>
+					<!-- Sport Convinced -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Conventionné</label></div>
+							<input id="user-sport-convinced" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport Price -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Prix par Mois en DT</label></div>
+							<input id="user-sport-price" class="uk-input" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<div uk-grid>
+					<!-- Sport Period -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Période</label></div>
+							<select id="user-sport-period" class="uk-select">
+								<option value="1 mois" selected>1 mois</option>
+								<option value="3 mois">3 mois</option>
+								<option value="6 mois">6 mois</option>
+								<option value="1 ans">1 ans</option>
+							</select>
+						</div>
+					</div>
+					<!-- Sport Start Period Error -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Début Période</label></div>
+							<input id="user-sport-start-period" class="uk-input" type="date">
+						</div>
+						<!-- Necessary Field Error -->
+						<div id="necessary-sport-start-period-user" class="uk-margin-small-top"><small>Ce champ est obligatoire</small></div>
+					</div>
+				</div>
+				<!-- Confirm Button -->
+				<button id="confirm-user-sport-add-btn" class="modal-btn">Confirmer</button>
+			</div>
+		</div>
+
+		<!-- Spouse Sport Add Modal -->
+		<div id="spouse-sport-add" class="uk-flex-top" uk-modal>
+			<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+				<button class="uk-modal-close-default" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<div class="uk-text-center"><h3>Ajouter Sport Pour Conjoint</h3></div>
+				<!-- Searching Sport -->
+				<div class="uk-margin">
+					<div class="uk-inline">
+						<span class="uk-form-icon" uk-icon="icon: search"></span>
+						<input id="spouse-search-sports" list="spouse-sports-result" class="uk-input" type="search" placeholder="Chercher des Sports...">
+					</div>
+					<!-- Invalid Sport Value -->
+					<div id="invalid-choosing-sport-spouse" class="uk-margin-small-top"><small>Veuillez vous choisir une sport</small></div>
+				</div>
+				<!-- Listing Sports -->
+				<div class="uk-margin">
+					<datalist id="spouse-sports-result"></datalist>
+				</div>
+				<!-- Sport Details -->
+				<div uk-grid>
+					<!-- Sport Name -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Sport</label></div>
+							<input id="spouse-sport-name" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport Available Days -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Disponible</label></div>
+							<input id="spouse-sport-available" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<!-- Sport Address -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label>Adresse</label></div>
+					<input id="spouse-sport-address" class="uk-input uk-disabled" type="text" readonly>
+				</div>
+				<div uk-grid>
+					<!-- Sport Start Time -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>De</label></div>
+							<input id="spouse-sport-start" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport End Time -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>à</label></div>
+							<input id="spouse-sport-end" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<div uk-grid>
+					<!-- Sport Convinced -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Conventionné</label></div>
+							<input id="spouse-sport-convinced" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport Price -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Prix par Mois en DT</label></div>
+							<input id="spouse-sport-price" class="uk-input" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<div uk-grid>
+					<!-- Sport Period -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Période</label></div>
+							<select id="spouse-sport-period" class="uk-select">
+								<option value="1 mois" selected>1 mois</option>
+								<option value="3 mois">3 mois</option>
+								<option value="6 mois">6 mois</option>
+								<option value="1 ans">1 ans</option>
+							</select>
+						</div>
+					</div>
+					<!-- Sport Start Period Error -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Début Période</label></div>
+							<input id="spouse-sport-start-period" class="uk-input" type="date">
+						</div>
+						<!-- Necessary Field Error -->
+						<div id="necessary-sport-start-period-spouse" class="uk-margin-small-top"><small>Ce champ est obligatoire</small></div>
+					</div>
+				</div>
+				<!-- Confirm Button -->
+				<button id="confirm-spouse-sport-add-btn" class="modal-btn">Confirmer</button>
+			</div>
+		</div>
+
+		<!-- Kid 1 Sport Add Modal -->
+		<div id="kid1-sport-add" class="uk-flex-top" uk-modal>
+			<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+				<button class="uk-modal-close-default" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<div class="uk-text-center"><h3>Ajouter Sport Pour Enfant 1</h3></div>
+				<!-- Searching Sport -->
+				<div class="uk-margin">
+					<div class="uk-inline">
+						<span class="uk-form-icon" uk-icon="icon: search"></span>
+						<input id="kid1-search-sports" list="kid1-sports-result" class="uk-input" type="search" placeholder="Chercher des Sports...">
+					</div>
+					<!-- Invalid Sport Value -->
+					<div id="invalid-choosing-sport-kid1" class="uk-margin-small-top"><small>Veuillez vous choisir une sport</small></div>
+				</div>
+				<!-- Listing Sports -->
+				<div class="uk-margin">
+					<datalist id="kid1-sports-result"></datalist>
+				</div>
+				<!-- Sport Details -->
+				<div uk-grid>
+					<!-- Sport Name -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Sport</label></div>
+							<input id="kid1-sport-name" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport Available Days -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Disponible</label></div>
+							<input id="kid1-sport-available" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<!-- Sport Address -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label>Adresse</label></div>
+					<input id="kid1-sport-address" class="uk-input uk-disabled" type="text" readonly>
+				</div>
+				<div uk-grid>
+					<!-- Sport Start Time -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>De</label></div>
+							<input id="kid1-sport-start" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport End Time -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>à</label></div>
+							<input id="kid1-sport-end" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<div uk-grid>
+					<!-- Sport Convinced -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Conventionné</label></div>
+							<input id="kid1-sport-convinced" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport Price -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Prix par Mois en DT</label></div>
+							<input id="kid1-sport-price" class="uk-input" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<div uk-grid>
+					<!-- Sport Period -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Période</label></div>
+							<select id="kid1-sport-period" class="uk-select">
+								<option value="1 mois" selected>1 mois</option>
+								<option value="3 mois">3 mois</option>
+								<option value="6 mois">6 mois</option>
+								<option value="1 ans">1 ans</option>
+							</select>
+						</div>
+					</div>
+					<!-- Sport Start Period Error -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Début Période</label></div>
+							<input id="kid1-sport-start-period" class="uk-input" type="date">
+						</div>
+						<!-- Necessary Field Error -->
+						<div id="necessary-sport-start-period-kid1" class="uk-margin-small-top"><small>Ce champ est obligatoire</small></div>
+					</div>
+				</div>
+				<!-- Confirm Button -->
+				<button id="confirm-kid1-sport-add-btn" class="modal-btn">Confirmer</button>
+			</div>
+		</div>
+
+		<!-- Kid 2 Sport Add Modal -->
+		<div id="kid2-sport-add" class="uk-flex-top" uk-modal>
+			<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+				<button class="uk-modal-close-default" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<div class="uk-text-center"><h3>Ajouter Sport Pour Enfant 2</h3></div>
+				<!-- Searching Sport -->
+				<div class="uk-margin">
+					<div class="uk-inline">
+						<span class="uk-form-icon" uk-icon="icon: search"></span>
+						<input id="kid2-search-sports" list="kid2-sports-result" class="uk-input" type="search" placeholder="Chercher des Sports...">
+					</div>
+					<!-- Invalid Sport Value -->
+					<div id="invalid-choosing-sport-kid2" class="uk-margin-small-top"><small>Veuillez vous choisir une sport</small></div>
+				</div>
+				<!-- Listing Sports -->
+				<div class="uk-margin">
+					<datalist id="kid2-sports-result"></datalist>
+				</div>
+				<!-- Sport Details -->
+				<div uk-grid>
+					<!-- Sport Name -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Sport</label></div>
+							<input id="kid2-sport-name" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport Available Days -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Disponible</label></div>
+							<input id="kid2-sport-available" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<!-- Sport Address -->
+				<div class="uk-margin">
+					<div class="uk-margin"><label>Adresse</label></div>
+					<input id="kid2-sport-address" class="uk-input uk-disabled" type="text" readonly>
+				</div>
+				<div uk-grid>
+					<!-- Sport Start Time -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>De</label></div>
+							<input id="kid2-sport-start" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport End Time -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>à</label></div>
+							<input id="kid2-sport-end" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<div uk-grid>
+					<!-- Sport Convinced -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Conventionné</label></div>
+							<input id="kid2-sport-convinced" class="uk-input uk-disabled" type="text" readonly>
+						</div>
+					</div>
+					<!-- Sport Price -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Prix par Mois en DT</label></div>
+							<input id="kid2-sport-price" class="uk-input" type="text" readonly>
+						</div>
+					</div>
+				</div>
+				<div uk-grid>
+					<!-- Sport Period -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Période</label></div>
+							<select id="kid2-sport-period" class="uk-select">
+								<option value="1 mois" selected>1 mois</option>
+								<option value="3 mois">3 mois</option>
+								<option value="6 mois">6 mois</option>
+								<option value="1 ans">1 ans</option>
+							</select>
+						</div>
+					</div>
+					<!-- Sport Start Period Error -->
+					<div class="uk-width-1-2">
+						<div class="uk-margin">
+							<div class="uk-margin"><label>Début Période</label></div>
+							<input id="kid2-sport-start-period" class="uk-input" type="date">
+						</div>
+						<!-- Necessary Field Error -->
+						<div id="necessary-sport-start-period-kid2" class="uk-margin-small-top"><small>Ce champ est obligatoire</small></div>
+					</div>
+				</div>
+				<!-- Confirm Button -->
+				<button id="confirm-kid2-sport-add-btn" class="modal-btn">Confirmer</button>
+			</div>
+		</div>
+
+		<!-- User Sport Cancel -->
+		<div id="user-sport-cancel" class="uk-width-small uk-position-center">
+			<h4>Vous êtes sûr d'annuler votre inscription à <span></span></h4>
+			<div uk-grid>
+				<div class="uk-width-1-2 uk-text-center"><button id="confirm-user-sport-cancel-btn" class="success-input">Confirmer</button></div>
+				<div class="uk-width-1-2 uk-text-center"><button id="cancel-user-sport-cancel-btn" class="danger-input">Annuler</button></div>
+			</div>
+		</div>
+
+		<!-- Spouse Sport Cancel -->
+		<div id="spouse-sport-cancel" class="uk-width-small uk-position-center">
+			<h4>Vous êtes sûr d'annuler votre inscription à <span></span></h4>
+			<div uk-grid>
+				<div class="uk-width-1-2 uk-text-center"><button id="confirm-spouse-sport-cancel-btn" class="success-input">Confirmer</button></div>
+				<div class="uk-width-1-2 uk-text-center"><button id="cancel-spouse-sport-cancel-btn" class="danger-input">Annuler</button></div>
+			</div>
+		</div>
+
+		<!-- Kid 1 Sport Cancel -->
+		<div id="kid1-sport-cancel" class="uk-width-small uk-position-center">
+			<h4>Vous êtes sûr d'annuler votre inscription à <span></span></h4>
+			<div uk-grid>
+				<div class="uk-width-1-2 uk-text-center"><button id="confirm-kid1-sport-cancel-btn" class="success-input">Confirmer</button></div>
+				<div class="uk-width-1-2 uk-text-center"><button id="cancel-kid1-sport-cancel-btn" class="danger-input">Annuler</button></div>
+			</div>
+		</div>
+
+		<!-- Kid 2 Sport Cancel -->
+		<div id="kid2-sport-cancel" class="uk-width-small uk-position-center">
+			<h4>Vous êtes sûr d'annuler votre inscription à <span></span></h4>
+			<div uk-grid>
+				<div class="uk-width-1-2 uk-text-center"><button id="confirm-kid2-sport-cancel-btn" class="success-input">Confirmer</button></div>
+				<div class="uk-width-1-2 uk-text-center"><button id="cancel-kid2-sport-cancel-btn" class="danger-input">Annuler</button></div>
+			</div>
+		</div>
+
+		<!-- User Sport History -->		
+		<div id="user-sport-history" class="uk-width-2-3" uk-offcanvas="flip: true; mode: push">
+			<div class="uk-offcanvas-bar uk-width-1-1">
+				<button id="user-sport-history-btn-close" class="uk-offcanvas-close" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<div id="user-sport-history-inner">
+					<div class="uk-text-center"><h3>Historique de <span id="user-history-name"></span></h3></div>
+					<table class="uk-table uk-table-divider uk-table-hover">
+						<thead>
+							<tr>
+								<th>Sport</th>
+								<th>Période</th>
+								<th>De</th>
+								<th>à</th>
+								<th>Suspendu</th>
+								<th>Paieement</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- DATA will be displayed from JavaScript -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- Spouse Sport History -->		
+		<div id="spouse-sport-history" class="uk-width-2-3" uk-offcanvas="flip: true; mode: push">
+			<div class="uk-offcanvas-bar uk-width-1-1">
+				<button id="spouse-sport-history-btn-close" class="uk-offcanvas-close" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<div id="spouse-sport-history-inner">
+					<div class="uk-text-center"><h3>Historique de <span id="spouse-history-name"></span></h3></div>
+					<table class="uk-table uk-table-divider uk-table-hover">
+						<thead>
+							<tr>
+								<th>Sport</th>
+								<th>Période</th>
+								<th>De</th>
+								<th>à</th>
+								<th>Suspendu</th>
+								<th>Paieement</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- DATA will be displayed from JavaScript -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- Kid 1 Sport History -->		
+		<div id="kid1-sport-history" class="uk-width-2-3" uk-offcanvas="flip: true; mode: push">
+			<div class="uk-offcanvas-bar uk-width-1-1">
+				<button id="kid1-sport-history-btn-close" class="uk-offcanvas-close" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<div id="kid1-sport-history-inner">
+					<div class="uk-text-center"><h3>Historique de <span id="kid1-history-name"></span></h3></div>
+					<table class="uk-table uk-table-divider uk-table-hover">
+						<thead>
+							<tr>
+								<th>Sport</th>
+								<th>Période</th>
+								<th>De</th>
+								<th>à</th>
+								<th>Suspendu</th>
+								<th>Paieement</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- DATA will be displayed from JavaScript -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- Kid 2 Sport History -->		
+		<div id="kid2-sport-history" class="uk-width-2-3" uk-offcanvas="flip: true; mode: push">
+			<div class="uk-offcanvas-bar uk-width-1-1">
+				<button id="kid2-sport-history-btn-close" class="uk-offcanvas-close" type="button" uk-icon="icon: close; ratio: 2"></button>
+				<div id="kid2-sport-history-inner">
+					<div class="uk-text-center"><h3>Historique de <span id="kid2-history-name"></span></h3></div>
+					<table class="uk-table uk-table-divider uk-table-hover">
+						<thead>
+							<tr>
+								<th>Sport</th>
+								<th>Période</th>
+								<th>De</th>
+								<th>à</th>
+								<th>Suspendu</th>
+								<th>Paiement</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- DATA will be displayed from JavaScript -->
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- jQuery JavaScript 3.4.1 -->
+		<script type="text/javascript" src="../../js/jquery/jquery-3.4.1.min.js"></script>
+		<!-- UIkit JavaScript 3.1.5 -->
+		<script type="text/javascript" src="../../js/uikit/uikit.min.js"></script>
+		<!-- UIkit Icons JavaScript 3.1.5 -->
+		<script type="text/javascript" src="../../js/uikit/uikit-icons.min.js"></script>
+		<!-- Toastr JavaScript 2.1.3 -->
+		<script type="text/javascript" src="../../js/toastr/toastr.min.js"></script>
+		<!-- Custom JavaScript -->
+		<script type="text/javascript" src="js/script.js"></script>
+		<!-- Custom Gloval JavaScript -->
+		<script type="text/javascript" src="../js/script.js"></script>
+	</body>
+</html>
